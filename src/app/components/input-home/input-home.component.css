@@ -1,0 +1,19 @@
+.conteudo {
+    width: 100%;
+    height: calc(100vh -66.8px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 60px;
+    font-family: var(--fonte-principal);
+    color: var(--laranja-principal);
+}
+
+.map_list {
+    background-color: transparent;
+    color: var(--laranja-principal);
+}

@@ -1,0 +1,38 @@
+.cabecalho{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.botao {
+    display: inline-block;
+    width: 125px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: var(--fonte-principal);
+}
+
+
+.botao_login {
+    background-color: var(--laranja-principal);
+    color: white;
+}
+
+.botao_register {
+    background-color: var(--azul-principal);
+    color: white;
+}
+
+.container_botoes {
+    text-align: right;
+}
+
+.container_logo {
+    margin: 10px;
+}

@@ -1,0 +1,52 @@
+.conteudo_principal {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container_imagem{
+    padding: 100px;
+}
+
+.conteiner_inputs {
+    padding: 10px;
+}
+
+.bombsite {
+    display: flex;
+    flex-direction: column;
+}
+
+.tittle {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+}
+
+.input_map_info {
+    margin: 4px;
+}
+
+.formulario_container {
+    height: 90%;
+    width: 99%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    font-family: var(--fonte-principal);
+    color: white;
+}
+
+.map_title {
+    color: white;
+    font-family: var(--fonte-principal);
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tutorials_titulo {
+    color: white;
+    font-family: var(--fonte-principal);
+    font-size: 30px;
+}
