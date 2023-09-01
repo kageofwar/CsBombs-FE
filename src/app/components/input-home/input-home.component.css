@@ -1,6 +1,6 @@
 .conteudo {
     width: 100%;
-    height: calc(100vh -66.8px);
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,4 +16,15 @@
 .map_list {
     background-color: transparent;
     color: var(--laranja-principal);
+}
+
+.select {
+    background: url(../../../assets/images/chevron-up.svg) no-repeat right;
+    background-size: contain;
+}
+
+
+.select option {
+    margin: 200px;
+    background-color: black;
 }

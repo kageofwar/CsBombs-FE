@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'krona': ['krona one']
+    }
   },
   plugins: [
     require("daisyui")
