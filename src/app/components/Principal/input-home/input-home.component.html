@@ -5,7 +5,8 @@
     <img src="../../../../../assets/images/lçgo-removebg-preview.png" alt="logo_cs" width="100" height="100">
     <h1 class="titulo">CsBombs</h1>  
 
-    <select class="
+    <select  id="mapSelected" [(ngModel)]="selectedMap"
+    class="
     select 
     w-[60%]
     bg-transparent
@@ -15,13 +16,12 @@
     border-[var(--azul-principal)]
     font-krona text-[12px]
     text-[var(--laranja-principal)]
-    my-8 "
-    
-    >
+    my-8 " >
+
       <option value="" disabled selected hidden >Pick your map</option>
-      <option class="decoration-rose-700" *ngFor="let mapa of mapas" style="padding: 8px 0;">{{ mapa.name }}</option>
+      <option *ngFor="let mapa of mapas" [value]="mapa.id" class="decoration-rose-700" style="padding: 8px 0;">{{ mapa.name }}</option>
     </select>
 
-    <button class="btn bg-[--azul-principal] btn-neutral font-krona text-[12px] w-[200px] h-[40px] text-[20px]">Select</button>
+    <button (click)="redirectToMap()" class="btn bg-[--azul-principal] btn-neutral font-krona text-[12px] w-[200px] h-[40px] text-[20px]" >Select</button>
   </section>
 </div>

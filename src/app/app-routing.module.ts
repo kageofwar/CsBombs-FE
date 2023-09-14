@@ -15,7 +15,7 @@ const routes: Routes = [
     component: InputHomeComponent
   },
   {
-    path: 'map_info/:mapa',
+    path: 'map_info/:id',
     component: MapInfoComponent
   },  
 ];

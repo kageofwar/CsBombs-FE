@@ -1,5 +1,7 @@
 import { Component, Input ,OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Mapa } from '../mapa';
+import { MapaService } from '../mapa.service';
 
 @Component({
   selector: 'app-map-info',
@@ -8,17 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MapInfoComponent implements OnInit {
 
-  @Input() mapa = {
-    nome: ''
+  mapa: Mapa = {
+    id: 0,
+    name: ''
   }
 
   constructor(
-    private activatedRoute: ActivatedRoute
+    private service: MapaService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
   
-  par = this.activatedRoute.snapshot.paramMap.get('mapa');
-  
   ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id')
+    this.service.buscarPorId(parseInt(id!)).subscribe((mapa) => {
+      this.mapa = mapa
+    })
   }
 
 }

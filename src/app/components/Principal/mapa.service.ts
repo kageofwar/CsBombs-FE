@@ -15,4 +15,9 @@ constructor(private http: HttpClient) { }
 listar(): Observable<Mapa[]> {
   return this.http.get<Mapa[]>(this.API)
 }
+
+buscarPorId(id: number): Observable<Mapa> {
+  const url = `${this.API}/${id}`
+  return this.http.get<Mapa>(url)
+}
 }
