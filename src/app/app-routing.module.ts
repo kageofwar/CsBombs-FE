@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import { InputHomeComponent } from './components/input-home/input-home.component';
-import { MapInfoComponent } from './components/map-info/map-info.component';
+import { HeaderComponent } from './components/headers/header/header.component';
+import { InputHomeComponent } from './components/Principal/input-home/input-home.component';
+import { MapInfoComponent } from './components/Principal/map-info/map-info.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: InputHomeComponent
   },
   {
-    path: 'map_info',
+    path: 'map_info/:mapa',
     component: MapInfoComponent
   },  
 ];

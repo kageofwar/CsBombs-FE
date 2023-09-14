@@ -2,7 +2,7 @@
   <app-header>
   </app-header>
   <section class="conteudo">
-    <img src="../../../assets/images/lçgo-removebg-preview.png" alt="logo_cs" width="100" height="100">
+    <img src="../../../../../assets/images/lçgo-removebg-preview.png" alt="logo_cs" width="100" height="100">
     <h1 class="titulo">CsBombs</h1>  
 
     <select class="
@@ -15,17 +15,13 @@
     border-[var(--azul-principal)]
     font-krona text-[12px]
     text-[var(--laranja-principal)]
-    my-8
-    [&>*]:py-4
-    ">
+    my-8 "
+    
+    >
       <option value="" disabled selected hidden >Pick your map</option>
-      <option value="#" style="padding: 8px 0;">Dust2</option>
-      <option value="#" style="padding: 8px 0;">Inferno</option>
-      <option value="#" style="padding: 8px 0;">Mirage</option>
-      <option value="#" style="padding: 8px 0;">Overpass</option>
-      <option value="#" style="padding: 8px 0;">Vertigo</option>
-      <option value="#" style="padding: 8px 0;">Cache</option>
+      <option class="decoration-rose-700" *ngFor="let mapa of mapas" style="padding: 8px 0;">{{ mapa.name }}</option>
     </select>
+
     <button class="btn bg-[--azul-principal] btn-neutral font-krona text-[12px] w-[200px] h-[40px] text-[20px]">Select</button>
   </section>
 </div>

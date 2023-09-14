@@ -19,7 +19,7 @@
 }
 
 .select {
-    background: url(../../../assets/images/chevron-up.svg) no-repeat right;
+    background: url(../../../../assets/images/chevron-up.svg) no-repeat right;
     background-size: contain;
 }
 
@@ -27,4 +27,9 @@
 .select option {
     margin: 200px;
     background-color: black;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--laranja-principal);
 }

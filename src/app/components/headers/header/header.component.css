@@ -1,0 +1,33 @@
+.cabecalho{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.container_botoes {
+    text-align: right;
+}
+
+.container_logo {
+    margin: 10px;
+}
+
+.container_logo {
+    width: 50px;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: orange;
+}
+
+.btn1:hover {
+    background-color: #ffffff;
+    color: var(--azul-principal);
+}
+
+.btn2:hover {
+    background-color: #ffffff;
+    color: var(--laranja-principal);
+}
