@@ -8,6 +8,7 @@ import { InputHomeComponent } from './components/Principal/input-home/input-home
 import { MapInfoComponent } from './components/Principal/map-info/map-info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AdminPageComponent } from './components/principal/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     InputHomeComponent,
     MapInfoComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,
