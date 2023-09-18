@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/headers/header/header.component';
 import { InputHomeComponent } from './components/Principal/input-home/input-home.component';
 import { MapInfoComponent } from './components/Principal/map-info/map-info.component';
-import { AdminPageComponent } from './components/principal/admin-page/admin-page.component';
+import { PerfilComponent } from './components/Principal/perfil/perfil.component';
+import { CreateMapComponent } from './components/admin/create-map/create-map.component';
 
 const routes: Routes = [
   {
@@ -20,8 +21,12 @@ const routes: Routes = [
     component: MapInfoComponent
   },  
   {
-    path: 'admin',
-    component: AdminPageComponent
+    path: 'perfil',
+    component: PerfilComponent
+  },
+  {
+    path: 'Create-New-Map',
+    component: CreateMapComponent
   }
 ];
 

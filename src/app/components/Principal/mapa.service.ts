@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class MapaService {
 
-  private readonly API = 'http://127.0.0.1:8000/api/maps'
+  private readonly API = 'http://10.30.16.83:8000/api/maps'
 
 constructor(private http: HttpClient) { }
 
