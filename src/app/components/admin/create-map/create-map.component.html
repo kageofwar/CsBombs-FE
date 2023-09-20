@@ -1,19 +1,41 @@
 <div class="h-screen">
     <app-header></app-header>
     <section class="flex justify-center items-center">
-        <div class="flex flex-col w-[50%] bg-[var(--azul-principal)]">
+        <div class="form_create_map flex flex-col w-[50%] bg-[var(--azul-principal)]">
 
-            <p class="flex items-center justify-center p-[20px] text-[24px] ">The heavy's and teams options are automatically registered</p>
+            <p class="flex items-center justify-center p-[20px] text-[15px] text-[var(--laranja-principal)]">The heavy's and teams options are automatically registered</p>
 
-            <label for="mapName"> Map Name
-                <input id="mapName" type="text">
+            <label for="mapName" class="label_titulo"> Map Name
+                <input id="mapName" type="text" class="h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
             </label>
-            <label for="mapPicture"> Map Picture
-                <input id="mapPicture" type="text">
+
+            <label class="label_titulo"> Map Picture
+                <input type="file" class="file-input file-input-bordered file-input-info w-full mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
             </label>
-            <label for="mapSite"> Map Site
-                <input id="mapSite" type="text">
-            </label>
-        </div>
+
+            <div class="flex">
+              <label for="mapSite" class="label_titulo3 w-full"> Map Site
+                <input id="mapSite" [(ngModel)]="site.nome" type="text" class="flex h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
+              </label>
+              <button class="mt-[16px] w-[50px] h-10 mt-[38px]" (click)="addNewMapSite()">
+                  <img src="../../../../assets/images/clipboard-plus-svgrepo-com.svg" alt="xd" width="50px">
+              </button>
+            </div>
+
+            <div class="teste w-[100%] flex items-center justify-center">
+                <div class="container_lista-mapas text-[var(--laranja-principal)]" *ngIf="mapSites.length >= 0">
+                    <h2 class="flex justify-center">Sites bellow will be registered</h2>
+                    <div class="ml-[20px] border-8" *ngFor="let mapSite of mapSites; let i = index;">
+                        <ul class="list-disc break-words w-[200px] h-[200px]">
+                            <li class="">
+                                <span>{{mapSite.nome}}</span>
+                                <a (click)="removeSite(i)"><img src="../../../../assets/images/shield-xmark-svgrepo-com.svg" alt="" width="20px" class="inline ml-[50px] mt-[30px] justify-center items-center place-items-center"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+         </div>
     </section>
 </div>

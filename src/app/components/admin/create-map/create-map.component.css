@@ -1,0 +1,22 @@
+.label_titulo {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: var(--fonte-principal);
+}
+
+.label_titulo3 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px 20px 20px ;
+    font-family: var(--fonte-principal);
+}
+
+.form_create_map {
+    font-family: var(--fonte-principal);
+}
+
+.container_lista-mapas {
+    border: 3px solid #D9D9D9;
+    width: 60%;
+}

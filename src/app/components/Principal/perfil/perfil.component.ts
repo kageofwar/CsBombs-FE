@@ -16,6 +16,6 @@ export class PerfilComponent implements OnInit {
   }
 
   redirectToCreate() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/Create-New-Map']);
   }
 }
