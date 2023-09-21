@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MapaService } from '../../Principal/mapa.service';
 import { Mapa } from '../../Principal/mapa';
+
 
 @Component({
   selector: 'app-create-map',
@@ -9,16 +11,20 @@ import { Mapa } from '../../Principal/mapa';
 })
 export class CreateMapComponent implements OnInit {
 
-  mapSites: { nome: string }[] = [{
-    nome : 'MACACO'
-  }];
+  mapa: Mapa = {
+    name: ''
+  }
+
+  mapSites: { nome: string }[] = [];
 
   site: {nome: string} = {
     nome: ''
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private service: MapaService
+
   ) { }
 
   ngOnInit(): void {
@@ -26,8 +32,16 @@ export class CreateMapComponent implements OnInit {
 
   addNewMapSite(): void {
     const newSite = { ...this.site };
+    if (newSite.nome.length < 3){
+      console.log('vai toma no cu piranhaaaaaaaaaaakkkkkkkkkkkkkkkkk')
+    }
     this.mapSites.push(newSite);
     this.site.nome = '';
+    console.log(this.mapSites)
+  }
+
+  CriarMapa() {
+    this.service.criarMapa(this.mapa).subscribe()
   }
 
   removeSite(index: number): void {
@@ -35,7 +49,7 @@ export class CreateMapComponent implements OnInit {
         this.mapSites.splice(index, 1);
     }
     console.log(this.mapSites)
-}
+  }
 
   redirectTo() {
     this.router.navigate(['/home']);

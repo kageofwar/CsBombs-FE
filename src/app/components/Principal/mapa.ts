@@ -1,4 +1,4 @@
 export interface Mapa {
-    id: 0,
+    id?: 0,
     name: string
 }

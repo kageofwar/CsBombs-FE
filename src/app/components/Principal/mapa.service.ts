@@ -20,4 +20,8 @@ buscarPorId(id: number): Observable<Mapa> {
   const url = `${this.API}/${id}`
   return this.http.get<Mapa>(url)
 }
+
+criarMapa(mapa: Mapa): Observable<Mapa> {
+  return this.http.post<Mapa>(this.API, mapa)
+}
 }

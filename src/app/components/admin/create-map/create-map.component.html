@@ -1,41 +1,58 @@
 <div class="h-screen">
     <app-header></app-header>
     <section class="flex justify-center items-center">
-        <div class="form_create_map flex flex-col w-[50%] bg-[var(--azul-principal)]">
+        <form class="form_create_map flex flex-col w-[50%] bg-[var(--azul-principal)]">
 
             <p class="flex items-center justify-center p-[20px] text-[15px] text-[var(--laranja-principal)]">The heavy's and teams options are automatically registered</p>
 
-            <label for="mapName" class="label_titulo"> Map Name
-                <input id="mapName" type="text" class="h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
+            <label for="map" class="label_titulo"> Map Name
+                <input [(ngModel)]="mapa.name" id="map" type="text" [ngModelOptions]="{standalone: true}" class="h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
             </label>
 
             <label class="label_titulo"> Map Picture
-                <input type="file" class="file-input file-input-bordered file-input-info w-full mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
+                <input type="file" class="file-input file-input-bordered file-input-info w-full mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9] border-[var(--laranja-principal)] file:bg-[var(--laranja-principal)] file:border-[var(--laranja-principal)]">
             </label>
 
             <div class="flex">
               <label for="mapSite" class="label_titulo3 w-full"> Map Site
-                <input id="mapSite" [(ngModel)]="site.nome" type="text" class="flex h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
+                <input id="mapSite" [(ngModel)]="site.nome" type="text" class="flex h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]" minlength= 3>
               </label>
               <button class="mt-[16px] w-[50px] h-10 mt-[38px]" (click)="addNewMapSite()">
                   <img src="../../../../assets/images/clipboard-plus-svgrepo-com.svg" alt="xd" width="50px">
               </button>
             </div>
 
-            <div class="teste w-[100%] flex items-center justify-center">
-                <div class="container_lista-mapas text-[var(--laranja-principal)]" *ngIf="mapSites.length >= 0">
-                    <h2 class="flex justify-center">Sites bellow will be registered</h2>
+            <div class="w-[100%] flex items-center justify-center">
+                <div class="container_lista-mapas text-[var(--laranja-principal)]" *ngIf="mapSites.length > 0">
+                    <h2 class="flex justify-center text-[15px] mb-[20px]">Sites bellow will be registered</h2>
                     <div class="ml-[20px] border-8" *ngFor="let mapSite of mapSites; let i = index;">
-                        <ul class="list-disc break-words w-[200px] h-[200px]">
-                            <li class="">
-                                <span>{{mapSite.nome}}</span>
-                                <a (click)="removeSite(i)"><img src="../../../../assets/images/shield-xmark-svgrepo-com.svg" alt="" width="20px" class="inline ml-[50px] mt-[30px] justify-center items-center place-items-center"></a>
+                        <ul class="list-disc break-words w-[100%]">
+                            <li class="m-[5px]">
+                                <span class="text-[13px]">{{mapSite.nome}}</span>
                             </li>
+                            <a (click)="removeSite(i)"><img src="../../../../assets/images/shield-xmark-svgrepo-com.svg" alt="" width="20px" class="inline justify-center items-center place-items-center"></a>
                         </ul>
                     </div>
                 </div>
             </div>
 
-         </div>
+            <div class="container_botoes flex w-full justify-center">
+                <button (click)="CriarMapa()" class="morte btn btn-outline btn-primary m-[10px] border-[var(--laranja-principal)]">Submit</button>
+                    <dialog id="my_modal_3" class="modal text-[var(--azul-principal)]">
+                      <div class="modal-box">
+                        <form method="dialog">
+                          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        </form>
+                        <h3 class="font-bold text-lg">Warning!!!</h3>
+                        <div *ngIf="mapSites.length == 0">
+                            <p class="py-4">Are you sure? this map is gona be registred withou a site.</p>
+                        </div>
+                      </div>
+                    </dialog>
+
+                <button class="btn btn-outline btn-error m-[10px] border-[var(--laranja-principal)]">Cancel</button>
+            </div>
+
+         </form>
     </section>
 </div>
