@@ -33,11 +33,12 @@ export class CreateMapComponent implements OnInit {
   addNewMapSite(): void {
     const newSite = { ...this.site };
     if (newSite.nome.length < 3){
-      console.log('vai toma no cu piranhaaaaaaaaaaakkkkkkkkkkkkkkkkk')
+
+    } else {
+      this.mapSites.push(newSite);
+      this.site.nome = '';
+      console.log(this.mapSites)
     }
-    this.mapSites.push(newSite);
-    this.site.nome = '';
-    console.log(this.mapSites)
   }
 
   CriarMapa() {

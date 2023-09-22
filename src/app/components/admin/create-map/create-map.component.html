@@ -15,7 +15,7 @@
 
             <div class="flex">
               <label for="mapSite" class="label_titulo3 w-full"> Map Site
-                <input id="mapSite" [(ngModel)]="site.nome" type="text" class="flex h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]" minlength= 3>
+                <input [(ngModel)]="site.nome" [ngModelOptions]="{standalone: true}" id="mapSite" type="text" class="flex h-[35px] mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9]">
               </label>
               <button class="mt-[16px] w-[50px] h-10 mt-[38px]" (click)="addNewMapSite()">
                   <img src="../../../../assets/images/clipboard-plus-svgrepo-com.svg" alt="xd" width="50px">
