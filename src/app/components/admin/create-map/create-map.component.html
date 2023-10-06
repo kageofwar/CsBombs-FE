@@ -10,7 +10,7 @@
             </label>
 
             <label class="label_titulo"> Map Picture
-                <input type="file" class="file-input file-input-bordered file-input-info w-full mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9] border-[var(--laranja-principal)] file:bg-[var(--laranja-principal)] file:border-[var(--laranja-principal)]">
+                <input [(ngModel)]="mapa.map_url_pic" type="file" [ngModelOptions]="{standalone: true}" class="file-input file-input-bordered file-input-info w-full mt-[10px] text-[var(--laranja-principal)] bg-[#D9D9D9] border-[var(--laranja-principal)] file:bg-[var(--laranja-principal)] file:border-[var(--laranja-principal)]">
             </label>
 
             <div class="flex">

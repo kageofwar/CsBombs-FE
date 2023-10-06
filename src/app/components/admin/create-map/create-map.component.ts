@@ -10,12 +10,15 @@ import { Mapa } from '../../Principal/mapa';
   styleUrls: ['./create-map.component.css']
 })
 export class CreateMapComponent implements OnInit {
+  
+  mapSites: { nome: string }[] = [];
 
   mapa: Mapa = {
-    name: ''
+    name: '',
+    map_url_pic: '',
+    sites: this.mapSites
   }
 
-  mapSites: { nome: string }[] = [];
 
   site: {nome: string} = {
     nome: ''

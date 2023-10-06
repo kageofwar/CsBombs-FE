@@ -12,7 +12,9 @@ export class MapInfoComponent implements OnInit {
 
   mapa: Mapa = {
     id: 0,
-    name: ''
+    name: '',
+    map_url_pic: '',
+    sites: []
   }
 
   constructor(
